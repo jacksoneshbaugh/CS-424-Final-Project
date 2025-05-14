@@ -9,6 +9,3 @@ Final Project for CS 424, Machine Learning Class at Lafayette College
   </td>
   <td>
 </table>
-<br><br></br>
-
-

@@ -8,3 +8,4 @@ For more information, read the full executive report and video.
 ## Video
 
 ## Executive Report
+Read our executive report [here](https://github.com/jacksoneshbaugh/CS-424-Final-Project/blob/main/report/main.pdf).

@@ -1,0 +1,42 @@
+\documentclass{article}[12pt]
+
+% PACKAGES
+\usepackage[margin=0.75in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{setspace}
+\doublespacing
+
+% TITLE & AUTHOR
+\title{CS 424 Final Project: \\ Financial Advisor}
+\author{
+  Jackson Eshbaugh, Gia Mazza
+}
+
+
+\begin{document}
+
+\maketitle
+
+Our final project was to build an effective personal finance budgeting tool, which consisted of utilizing three different machine learning models. Our goal was to determine large—perhaps unnecessary—purchases, predict future spending, and generate personalized recommendations based on the user’s past and predicted future spending habits.
+
+To complete this project, we first utilized an isolation forest model to complete the anomaly detection step. This model, provided by sklearn, isolates outlying or unusual data based on the general trend of the data. Isolation forest models are commonly used for this kind of task. In fact, a study published in 2024 still included an isolation forest model in its transaction anomaly detection process, despite the existence of deeper, more complex models~\cite{KumarBansal2024BoostingAD}. Hence, we  selected this model type to determine which transactions should be flagged as unusual or odd. 
+
+Then, we used a Long Short-Term Memory (LSTM) neural network to accomplish time-series forecasting, which predicted the user’s future spending habits based on their previous twelve weeks of spending. This choice was straightforward after a review of the literature—numerous studies show that LSTMs are capable of modeling complex nonlinear data such as financial data \cite{Yan2017FinancialTS, Kumar2024PERSONALFM}. Originally, we attempted to do a monthly forecast. However, we ran into issues related to the size of the dataset we used to train the model. Specifically, since the dataset does not span many months, we could not get a very accurate model for monthly inference.
+
+Finally, we used Google’s Gemma 2 2B Large Language Model (LLM) \cite{Mesnard2024GemmaOM} to generate personalized recommendations, based on the anomalies and predicted spending patterns. The user could then optionally chat with the model to discuss their budgeting further.
+
+Overall, our anomaly detection and time-series forecasting models performed really well. Specifically, the LSTM had a mean square error of 0.0027 during one trial, and only up to 0.0040 after running again. These low numbers are quite impressive and demonstrate how little error our model had, which highlights our model’s accuracy in predicting future spending. On the other hand, the LLM struggled: it often hallucinated, or made up information, or forgot the information it had access to. We believe this was due in part to the fact that we had to use an older model, due to the restrictions of Google Colab. The model we used has not been updated in over nine months~\cite{huggingfaceGemma2b}. This is a large amount of time for an LLM to remain stagnant based on the progress of other models, so we attribute the LLM issues to this fact. However, despite the issues, the model performed better than we expected. It is known to generate good recommendations~\cite{geeksforgeeks2024gemma}, which is why we used this model. These recommendations were high-quality for their time nine months ago, so we were generally happy with the results.
+
+In conclusion, despite the issues with the LLM, our project successfully aids the user in planning their weekly budget. The use of three machine learning models allows us to provide the user with a comprehensive briefing of their current financial status and plan for their future spending, one week at a time.
+
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\end{document}

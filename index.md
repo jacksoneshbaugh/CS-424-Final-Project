@@ -10,3 +10,6 @@ For more information, read the full executive report and video.
 
 ## Executive Report
 Read our executive report [here](https://github.com/jacksoneshbaugh/CS-424-Final-Project/blob/main/report/main.pdf).
+
+### Thank you to Ismat Samadov for our Data Set
+https://www.kaggle.com/datasets/ismetsemedov/personal-budget-transactions-dataset

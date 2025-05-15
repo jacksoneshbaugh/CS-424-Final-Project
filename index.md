@@ -9,8 +9,6 @@ For additional information, read the full executive report and video.
 
 ## Video
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/QxdjZONUkJo?si=i302UxuFFlW0iF17" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 [![](https://markdown-videos-api.jorgenkh.no/youtube/QxdjZONUkJo)](https://youtu.be/QxdjZONUkJo)
 
 > **Note**: The graphs shown in the video show solid performance (especially when you take into context how zoomed in the curves are). However, as the space between the curves increases, we see signs of _slight_ (and I do mean slight) overfitting, which is why the 6th trial won out.
